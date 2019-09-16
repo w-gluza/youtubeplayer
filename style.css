@@ -1,0 +1,109 @@
+/* -------- VARIABLES ------------- */
+:root {
+  --color-primary: #0b8793;
+  --color-secondary: #360033;
+
+  --color-black: #000;
+  --color-white: #fefefefe;
+}
+
+/* -------- SIMPLE RESET ------------- */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  list-style: none;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+html {
+  /* This define what 1rem is */
+  /* 10px/16pc = 62,5% --> 1rem = 10px; */
+  font-size: 62.5%;
+  height: 100%;
+  width: 100%;
+}
+
+button,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  cursor: pointer;
+}
+
+body {
+  background: var(--color-primary); /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-secondary)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-secondary)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: var(--color-white);
+}
+
+.main {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  align-content: center;
+  justify-content: center;
+}
+
+.player__controls {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  align-items: center;
+  background: var(--color-black);
+  min-height: 3rem;
+  padding: 2rem;
+  gap: 5rem;
+}
+
+svg.icon {
+  fill: var(--color-white);
+  opacity: 0.5;
+  height: 3rem;
+  cursor: pointer;
+}
+
+svg.icon:hover {
+  fill: var(--color-primary);
+  opacity: 1;
+}
+
+input[type='range'] {
+  margin: auto;
+  -webkit-appearance: none;
+  position: relative;
+  overflow: hidden;
+  height: 0.5rem;
+  width: 20rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 0.5rem;
+}
+
+::-webkit-slider-runnable-track {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  box-shadow: -100vw 0 0 100vw var(--color-primary);
+  border: 1rem;
+}
